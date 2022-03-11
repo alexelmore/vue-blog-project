@@ -5,38 +5,70 @@
       <input required type="text" v-model="title" />
       <label>Content: </label><textarea required v-model="body"></textarea>
       <label>Tags (click enter to add a tag)</label>
-      <input required v-model="tag" @keydown.enter.prevent="handleKeyDown" />
+      <input v-model="tag" @keydown.enter.prevent="handleKeyDown" />
       <button>Add Post</button>
       <div v-for="tag in tags" :key="tag" class="pill">#{{ tag }}</div>
     </form>
+    <div v-if="error">{{ error }}</div>
   </div>
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
+import { useRouter } from "vue-router";
 export default {
   name: "Create",
   setup() {
+    // Ref for data binding to form inputs
     const title = ref("");
     const body = ref("");
     const tags = ref([]);
     const tag = ref("");
+    const error = ref(null);
 
+    // Init router for redirecting user to the home page after a successful POST request
+    const router = useRouter();
+
+    // Url to use for POST fetch request
+    const url = "http://localhost:3000/posts";
+
+    // Function that handles adding new tags to the tags array
     const handleKeyDown = () => {
-      if (tag.value !== "" && !tags.value.includes(tag.value)) {
+      if (!tags.value.includes(tag.value)) {
         tags.value.push(tag.value.replace(/\s/, ""));
       }
       tag.value = "";
     };
 
-    const handleSubmit = () => {
-      console.log(title.value, body.value, tags.value);
+    // Function that handles form submission
+    const handleSubmit = async () => {
+      try {
+        // Object that will be sent as the body for our POST Fetch Request
+        let newPost = {
+          title: title.value,
+          body: body.value,
+          tags: tags.value,
+        };
+        // Make a post request
+        const request = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newPost),
+        });
+        if (request.status === 201 && request.ok) {
+          router.push("/");
+        }
+      } catch (err) {
+        error.value =
+          "There was an issue and we are unable to add your post at this time";
+      }
     };
     return {
       body,
       title,
       tags,
       tag,
+      error,
       handleKeyDown,
       handleSubmit,
     };
