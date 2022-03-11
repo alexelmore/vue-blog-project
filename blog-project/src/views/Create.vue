@@ -57,10 +57,11 @@ export default {
         });
         if (request.status === 201 && request.ok) {
           router.push("/");
+        } else {
+          throw new Error("Error: Unable to add your post");
         }
       } catch (err) {
-        error.value =
-          "There was an issue and we are unable to add your post at this time";
+        error.value = "Error: Unable to add your post at this time";
       }
     };
     return {
