@@ -7,7 +7,7 @@
 			<PostList :posts="posts" />
 			<TagCloud :posts="posts" />
 		</div>
-		<div v-else><Spinner /></div>
+		<div v-if="!error && posts.length <= 0"><Spinner /></div>
 	</div>
 </template>
 

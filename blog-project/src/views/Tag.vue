@@ -2,7 +2,7 @@
 	<div class="tag">
 		<div v-if="error">{{ error }}</div>
 		<div v-if="posts.length"><PostList :posts="filteredPosts" /></div>
-		<div v-else><Spinner /></div>
+		<div v-if="!error && posts.length <= 0"><Spinner /></div>
 	</div>
 </template>
 
