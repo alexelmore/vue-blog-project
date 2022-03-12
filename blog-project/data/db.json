@@ -4,19 +4,49 @@
       "id": 1,
       "title": "welcome to the new blog",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": ["webdev", "coding", "news"]
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
     },
     {
       "id": 2,
       "title": "top 5 CSS tips",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": ["css", "webdev", "coding"]
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
     },
     {
       "id": 5707,
       "title": "Make a modal using CSS",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis est ex, mollis id placerat eu, vulputate vehicula eros. Etiam nec urna egestas, pretium justo ut, luctus arcu. Maecenas dictum mi elit, sed molestie nulla pulvinar a. Sed pellentesque mauris quis ex aliquam tincidunt. Aliquam erat volutpat. Quisque auctor ante at felis maximus, commodo dapibus massa porttitor. Phasellus dignissim finibus placerat. Duis eu erat sem. Suspendisse venenatis molestie sapien a egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas in imperdiet mi. Etiam ac massa vel nulla lobortis viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\n\nMauris in erat tincidunt, dictum ligula id, vulputate nisl. Nam accumsan sodales mi, sed faucibus lacus pharetra id. Vestibulum interdum nibh orci, ut egestas risus venenatis vitae. Mauris tortor nisl, congue vulputate mauris sit amet, mattis pellentesque nunc. Proin imperdiet dapibus tincidunt. Cras at vehicula libero. Quisque lobortis quis est vel interdum. Duis molestie feugiat tellus sed sagittis. Duis eleifend lorem mauris, quis suscipit turpis luctus non.",
-      "tags": ["css", "webdev", "coding"]
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "title": "Vue and You",
+      "body": "New Firebase Version 9 Content\nHey gang,\n\nI just wanted to let you know that I've now added a new chapter near the end of the course all about using Vue 3 with Firebase 9. Version 9 of Firebase adopts a more modular & functional approach, which takes advantage of something called \"tree-shaking\". This means that any unused Firebase code is \"shaken\" out of our final production bundles, leading to a better performance.\n\nIn version 9, much of the functionality of Firebase, under the hood, is the same as previous versions. So it would definitely benefit you to go through the previous course projects first (that use Firebase 8) to solidify your understanding of Firebase concepts.",
+      "tags": [
+        "Vue.js",
+        "JavaScript"
+      ],
+      "id": 5708
+    },
+    {
+      "title": "Vue Development Differently!",
+      "body": "New Firebase Version (version 9)\nHi all,\n\nJust a quick update regarding Firebase. The projects in this course currently use Firebase version 8 (which is completely fine to use, I still use this version in some of my live projects). So for these course projects I would suggest that when you install the Firebase package, install version 8 so that you can follow along as I do without any problems. You can specify the version you install by saying npm install firebase@8.5 (the @8.5 bit means install version 8.5, and will be fully compatible with the course projects).\n\nHowever, Firebase 9 has now been released, which adopts a more modular & functional approach, (so the way we work with it is slightly different). Therefore, I will be making a new chapter about how to use Vue 3 with Firebase version 9 over the next 2-3 weeks.",
+      "tags": [
+        "Vue.js",
+        "JavaScript"
+      ],
+      "id": 5709
     }
   ]
 }
