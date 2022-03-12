@@ -1,18 +1,17 @@
 import { ref } from "vue";
+import { projectFirestore } from "@/firebase/config";
 const getPosts = () => {
   const posts = ref([]);
   const error = ref(null);
 
   const load = async () => {
     try {
-      const post = await fetch(`http://localhost:3000/posts`);
-      if (post.status === 200 && post.ok) {
-        const json = await post.json();
-        const data = await json;
-        posts.value = data;
-      } else {
-        throw new Error("Unable to fetch the data");
-      }
+      // Create a connection to the firestore collection
+      const res = await projectFirestore.collection('posts').get();
+      posts.value = res.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+
     } catch (err) {
       error.value = err.message;
     }

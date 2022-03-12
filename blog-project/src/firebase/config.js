@@ -1,4 +1,3 @@
-import { def } from "@vue/shared";
 import firebase from "firebase/app";
 import 'firebase/firestore';
 
