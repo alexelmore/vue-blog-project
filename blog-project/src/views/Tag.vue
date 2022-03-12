@@ -12,6 +12,7 @@ import getPosts from "../composables/getPosts";
 import PostList from "../components/PostList.vue";
 import { useRoute } from "vue-router";
 import { computed } from "@vue/runtime-core";
+
 export default {
 	name: "Tag",
 	components: {
@@ -19,17 +20,18 @@ export default {
 		PostList,
 	},
 	setup() {
-		// Init route from useRoute
-		const route = useRoute();
-		// Init current tag
-		const currentTag = route.params.tag;
 		// Pull out post,error and load from getPosts composables
 		const { posts, error, load } = getPosts();
+
 		// call the load function to get the posts
 		load();
+
+		// Init route from useRoute
+		const route = useRoute();
+
 		// Use a computed property that filters returns only the posts that have the current tag in them
 		const filteredPosts = computed(() => {
-			return posts.value.filter((post) => post.tags.includes(currentTag));
+			return posts.value.filter((post) => post.tags.includes(route.params.tag));
 		});
 		return { error, posts, filteredPosts };
 	},
