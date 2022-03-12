@@ -38,4 +38,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.tag {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px;
+}
+</style>

@@ -34,7 +34,7 @@ export default {
 .post {
 	margin: 0 40px 30px;
 	padding-bottom: 30px;
-	border-bottom: 1px dashed #e7e7e7;
+	border-bottom: 1px dashed #00ff00;
 }
 .post h3 {
 	display: inline-block;
@@ -56,4 +56,18 @@ export default {
 	left: -30px;
 	transform: rotateZ(-1deg);
 }
+.post a h3:hover {
+	color: #00ff00;
+}
+
+.post a {
+	text-decoration: none;
+}
+
+.post a:visited {
+	color: #ff8800;
+} /* Visited link    */
+.post a:hover {
+	color: #00ff00;
+} /* Mouse over link */
 </style>
